@@ -24,5 +24,9 @@ class TestStack(unittest.TestCase):
         stack.push("B")
         self.assertEqual(stack.top.data, "B")
         self.assertEqual(stack.top.next_node.data, "A")
-
-
+        """тесты на метод pop()"""
+        stack.pop()
+        self.assertEqual(stack.top.data, "A")
+        self.assertEqual(stack.top.next_node, None)
+        with self.assertRaises(AttributeError):
+            print(stack.top.next_node.data)
