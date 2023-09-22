@@ -30,3 +30,12 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.top.next_node, None)
         with self.assertRaises(AttributeError):
             print(stack.top.next_node.data)
+
+    def test_stack_str(self):
+        stack = Stack()
+        self.assertEqual(str(Stack()), "")
+        stack.push("A")
+        stack.push("B")
+        stack.push("C")
+        self.assertEqual(str(stack), "C\nB\nA")
+
