@@ -36,3 +36,10 @@ class Stack:
         ejected = self.top.data
         self.top = self.top.next_node
         return ejected
+
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        if self.top is None:
+            return ""
+        else:
+            return f"{self.top.data}\n{self.top.next_node.data}\n{self.top.next_node.next_node.data}"
