@@ -38,4 +38,3 @@ class TestStack(unittest.TestCase):
         stack.push("B")
         stack.push("C")
         self.assertEqual(str(stack), "C\nB\nA")
-
