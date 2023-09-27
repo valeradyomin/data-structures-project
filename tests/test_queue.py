@@ -13,10 +13,10 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(node1.data, "A")
         self.assertEqual(node1.next_node, None)
 
-    def test_stack_is_obj(self):
+    def test_queue_is_obj(self):
         self.assertIsInstance(Queue(), object)
 
-    def test_stack_content(self):
+    def test_queue_content(self):
         queue = Queue()
         self.assertEqual(queue.head, None)
         queue.enqueue("A")
@@ -27,8 +27,15 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.tail.data, "C")
         with self.assertRaises(AttributeError):
             print(queue.tail.next_node.data)
+        """тесты на метод dequeue()"""
+        self.assertEqual(str(queue.dequeue()), "A")
+        self.assertEqual(queue.head.data, "B")
+        queue.dequeue()
+        self.assertEqual(queue.head.data, "C")
+        queue.dequeue()
+        self.assertEqual(queue.head, None)
 
-    def test_stack_str(self):
+    def test_queue_str(self):
         queue = Queue()
         self.assertEqual(str(Queue()), "")
         queue.enqueue("A")
